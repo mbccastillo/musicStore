@@ -12,7 +12,9 @@ const isActive = (history, path) => {
 
 const Menu = ({history}) => (
     <div>
-        <ul className="nav nav-tabs bg-primary">
+       <nav className="navbar navbar-expand-lg bg-primary h2-nav"> 
+       <a className="navbar-brand text-white" href="/">TechLad's Shop</a> 
+       <ul className="nav nav-tabs">
             <li className="nave-item">
                 <Link className="nav-link" style={isActive(history, "/")} to="/">Home</Link>
             </li>
@@ -25,7 +27,7 @@ const Menu = ({history}) => (
                         to="/user/dashboard">Dashboard</Link>
                     </li>
                     
-    )};
+    )}
 
 {isAuthenticated() && isAuthenticated().user.role === 1 && (
                         <li className="nave-item">
@@ -35,18 +37,18 @@ const Menu = ({history}) => (
                         to="/admin/dashboard">Dashboard</Link>
                     </li>
                     
-    )};
+    )}
 
             {!isAuthenticated() && (
                 <Fragment>
                 <li className="nave-item">
-                    <Link className="nav-link" style={isActive(history, "/signin")} to="/signin">Singin</Link>
+                    <Link className="nav-link" style={isActive(history, "/signin")} to="/signin">Sign In</Link>
                 </li>
                 <li className="nave-item">
                     <Link className="nav-link" style={isActive(history, "/signup")} to="/signup">Signup</Link>
                 </li>
             </Fragment>
-            )};
+            )}
             
             {isAuthenticated() && (
                     <li className="nave-item">
@@ -56,8 +58,9 @@ const Menu = ({history}) => (
                         }
                         >Signout</span>
                     </li>
-            )};                
+            )}             
         </ul>
+        </nav>
     </div>
 )
 
